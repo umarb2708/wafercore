@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WaferCore - Crafting the Core of Innovations</title>
+    <title>About Us - WaferCore</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -23,16 +23,9 @@
             --max-width: 1200px;
         }
 
-        /* --- 2. RESET & BASE STYLES --- */
+        /* --- 2. BASE STYLES --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body { 
-            font-family: 'Inter', sans-serif; 
-            line-height: 1.6; 
-            color: var(--text-dark); 
-            background-color: var(--white);
-        }
-        
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--text-dark); background-color: var(--white); }
         h1, h2, h3, h4 { font-family: 'Roboto', sans-serif; font-weight: 700; color: var(--primary-black); }
         a { text-decoration: none; transition: 0.3s; color: inherit; }
         ul { list-style: none; }
@@ -41,6 +34,14 @@
         /* --- 3. UTILITIES --- */
         .container { max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
         
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: 2.5rem; margin-bottom: 15px; position: relative; display: inline-block; }
+        .section-title h2::after { content: ''; display: block; width: 60px; height: 4px; background: var(--primary-red); margin: 10px auto 0; }
+        .section-title p { color: var(--text-light); max-width: 600px; margin: 0 auto; }
+        
+        section { padding: 80px 0; }
+
+        /* Button Style */
         .btn {
             display: inline-block;
             padding: 14px 35px;
@@ -54,238 +55,119 @@
             font-size: 0.9rem;
             letter-spacing: 1px;
         }
-        
-        .btn:hover { 
-            background: var(--primary-black); 
-            transform: translateY(-2px); 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
+        .btn:hover { background: var(--primary-black); transform: translateY(-2px); color: var(--white); }
 
-        .section-title { text-align: center; margin-bottom: 60px; }
-        .section-title h2 { 
-            font-size: 2.5rem; 
-            margin-bottom: 15px; 
-            position: relative;
-            display: inline-block;
-        }
-        .section-title h2::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: var(--primary-red);
-            margin: 10px auto 0;
-        }
-        .section-title p { color: var(--text-light); max-width: 600px; margin: 0 auto; }
-        
-        section { padding: 80px 0; }
-
-        /* --- 4. TOP HEADER (Black) --- */
-        .top-header { 
-            background: var(--primary-black); 
-            color: var(--white); 
-            padding: 12px 0; 
-            font-size: 0.85rem;
-        }
+        /* --- 4. HEADER & NAV --- */
+        .top-header { background: var(--primary-black); color: var(--white); padding: 12px 0; font-size: 0.85rem; }
         .top-header .container { display: flex; justify-content: space-between; align-items: center; }
-        
         .social-icons a { margin-right: 20px; color: #cccccc; }
         .social-icons a:hover { color: var(--primary-red); }
-        
         .contact-info span { margin-left: 25px; color: #cccccc; }
         .contact-info i { margin-right: 8px; color: var(--primary-red); }
 
-        /* --- 5. NAVIGATION (White) --- */
-        .navbar { 
-            background: var(--white); 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
-            position: sticky; 
-            top: 0; 
-            z-index: 1000; 
-        }
+        .navbar { background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
         .navbar .container { display: flex; justify-content: space-between; align-items: center; height: 90px; }
-        
-        .logo-wrapper { display: flex; flex-direction: column; justify-content: center; }
-        .logo { 
-            font-size: 2rem; 
-            font-weight: 900; 
-            color: var(--primary-black); 
-            line-height: 1; 
-            letter-spacing: -1px;
-        }
+        .logo { font-size: 2rem; font-weight: 900; color: var(--primary-black); line-height: 1; letter-spacing: -1px; }
         .logo span { color: var(--primary-red); }
-        .logo-caption { 
-            font-size: 0.7rem; 
-            color: var(--text-light); 
-            font-weight: 600; 
-            text-transform: uppercase; 
-            letter-spacing: 2px; 
-            margin-top: 5px;
-        }
+        .logo-caption { font-size: 0.7rem; color: var(--text-light); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-top: 5px; }
         
         .nav-links { display: flex; gap: 35px; }
-        .nav-links a { 
-            font-weight: 500; 
-            font-size: 1rem; 
-            color: var(--primary-black); 
-            position: relative;
-        }
+        .nav-links a { font-weight: 500; font-size: 1rem; color: var(--primary-black); }
         .nav-links a:hover, .nav-links a.active { color: var(--primary-red); }
 
-        /* --- 6. HERO SECTION --- */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('https://wafercore.com/wp-content/uploads/2024/12/BackgroundVLSI-1024x683.jpg');
+        /* --- 5. HERO SECTION --- */
+        .page-hero {
+            /* Using local image with dark overlay */
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('images/About_Hero.jpg');
             background-size: cover;
             background-position: center;
-            height: 85vh;
+            height: 60vh;
             display: flex;
             align-items: center;
-            color: var(--white);
+            justify-content: center;
             text-align: center;
+            color: var(--white);
         }
-        .hero-content { max-width: 900px; margin: 0 auto; }
-        .hero h1 { 
-            font-size: 4rem; 
-            font-weight: 900; 
-            margin-bottom: 20px; 
-            color: var(--white); 
-            line-height: 1.1;
-        }
-        .hero p { 
-            font-size: 1.3rem; 
-            margin-bottom: 40px; 
-            color: #dddddd; 
-            font-weight: 300;
-        }
-        .hero .btn { background: var(--primary-red); border: none; }
-        .hero .btn:hover { background: var(--white); color: var(--primary-red); }
+        .page-hero h1 { color: var(--white); font-size: 3.5rem; margin-bottom: 20px; }
+        .page-hero p { font-size: 1.2rem; color: #ddd; max-width: 700px; margin: 0 auto; }
 
-        /* --- 7. FEATURES OVERVIEW --- */
-        .features { 
-            background: var(--white); 
-            padding: 60px 0; 
-            margin-top: -80px; 
-            position: relative; 
-            z-index: 10; 
+        /* --- 6. MISSION & VISION --- */
+        .mission-vision { background: var(--white); }
+        .mv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        
+        /* Image Wrapper with Black Overlay Effect */
+        .img-wrapper { position: relative; border-radius: 4px; overflow: hidden; }
+        .img-wrapper img { width: 100%; height: auto; display: block; transition: 0.3s; }
+        .img-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.3); /* The Black Shade Overlay */
+            transition: 0.3s;
         }
-        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .feature-card {
-            background: var(--white);
+        .img-wrapper:hover::after { background: rgba(0, 0, 0, 0.1); }
+        .img-wrapper:hover img { transform: scale(1.05); }
+
+        .mv-content h3 { font-size: 1.8rem; margin-bottom: 15px; color: var(--primary-red); }
+        .mv-content p { margin-bottom: 25px; color: var(--text-light); text-align: justify; }
+
+        /* --- 7. FEATURES (Red Boxes) --- */
+        .features-section { background: var(--light-bg); }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        
+        .feature-box {
+            background: var(--primary-red);
+            color: var(--white);
             padding: 40px 30px;
             border-radius: 4px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             text-align: center;
-            border-bottom: 4px solid var(--primary-red);
-            transition: transform 0.3s ease;
+            transition: 0.3s;
+            border: 1px solid var(--primary-red);
         }
-        .feature-card:hover { transform: translateY(-5px); }
-        .feature-card i { font-size: 2.5rem; color: var(--primary-red); margin-bottom: 20px; }
-        .feature-card h3 { font-size: 1.25rem; margin-bottom: 15px; }
-        .feature-card p { font-size: 0.95rem; color: var(--text-light); }
+        .feature-box i { font-size: 2.5rem; margin-bottom: 20px; color: var(--white); transition: 0.3s; }
+        .feature-box h3 { color: var(--white); margin-bottom: 15px; transition: 0.3s; }
+        .feature-box p { color: #f2f2f2; font-size: 0.95rem; transition: 0.3s; }
 
-        /* --- 8. ABOUT SECTION --- */
-        .about { background: var(--light-bg); }
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-        .about-img img { 
-            width: 100%; 
+        /* Hover: White Box, Black Text */
+        .feature-box:hover { background: var(--white); border-color: var(--primary-black); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .feature-box:hover h3 { color: var(--primary-black); }
+        .feature-box:hover i { color: var(--primary-red); }
+        .feature-box:hover p { color: var(--text-light); }
+
+        /* --- 8. SERVICES STRIP --- */
+        .services-strip { background: var(--primary-black); color: var(--white); text-align: center; }
+        .services-strip .section-title h2 { color: var(--white); }
+        .services-strip .section-title p { color: #aaa; }
+        
+        .services-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; }
+        .service-item { 
+            flex: 1; min-width: 280px; max-width: 350px; 
+            background: rgba(255,255,255,0.05); 
+            padding: 30px; 
             border-radius: 4px; 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1); 
+            border: 1px solid rgba(255,255,255,0.1); 
+            transition: 0.3s; 
         }
-        .about-text h2 { font-size: 2.5rem; margin-bottom: 25px; }
-        .about-text p { margin-bottom: 20px; color: var(--text-light); font-size: 1.05rem; }
-        .about-text strong { color: var(--primary-red); }
+        .service-item:hover { background: var(--primary-red); border-color: var(--primary-red); transform: translateY(-5px); }
+        .service-item h4 { color: var(--white); font-size: 1.2rem; margin-bottom: 15px; }
+        .service-item p { color: #ccc; font-size: 0.9rem; }
+        .service-item:hover p { color: var(--white); }
 
-        /* --- 9. KEY FOCUS --- */
-        .key-focus { background: var(--white); }
-        .focus-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-        .focus-item {
-            background: var(--light-bg);
-            padding: 30px 20px;
-            text-align: center;
-            border-radius: 4px;
-            border: 1px solid var(--border-color);
-            transition: 0.3s;
-        }
-        .focus-item:hover { 
-            background: var(--primary-red); 
-            border-color: var(--primary-red);
-            transform: translateY(-5px); 
-        }
-        .focus-item h4 { font-size: 1.1rem; margin-top: 15px; transition: 0.3s; }
-        .focus-item i { font-size: 2rem; color: var(--primary-black); transition: 0.3s; }
-        
-        .focus-item:hover h4, .focus-item:hover i { color: var(--white); }
-
-        /* --- 10. SERVICES --- */
-        .services { background: var(--light-bg); }
-        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .service-card {
-            background: var(--white);
-            padding: 40px 35px;
-            border-radius: 4px;
-            border: 1px solid var(--border-color);
-            transition: 0.3s;
-            position: relative;
-        }
-        .service-card:hover { 
-            border-top: 3px solid var(--primary-red); 
-            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
-            transform: translateY(-5px);
-        }
-        .service-card h3 { font-size: 1.4rem; margin-bottom: 15px; }
-        .service-card p { margin-bottom: 25px; color: var(--text-light); }
-        .service-link { 
-            color: var(--primary-red); 
-            font-weight: 700; 
-            font-size: 0.9rem; 
-            text-transform: uppercase; 
-            display: inline-flex; 
-            align-items: center; 
-        }
-        .service-link i { margin-left: 8px; font-size: 0.8rem; transition: 0.3s; }
-        .service-link:hover i { margin-left: 12px; }
-
-        /* --- 11. CTA SECTION --- */
-        .cta-section { 
-            background: var(--primary-black); 
-            color: var(--white); 
-            text-align: center; 
-            padding: 100px 0; 
-        }
-        .cta-section h2 { color: var(--white); margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto; }
-        .cta-section .btn { background: var(--primary-red); }
-        .cta-section .btn:hover { background: var(--white); color: var(--primary-red); }
-
-        /* --- 12. FOOTER --- */
-        footer { 
-            background: #111111; 
-            color: #999; 
-            padding: 70px 0 30px; 
-            border-top: 4px solid var(--primary-red); 
-        }
+        /* --- 9. FOOTER --- */
+        footer { background: #111; color: #999; padding: 70px 0 30px; border-top: 4px solid var(--primary-red); }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 50px; }
-        .footer-col h4 { color: var(--white); margin-bottom: 25px; font-size: 1.2rem; letter-spacing: 0.5px; }
+        .footer-col h4 { color: var(--white); margin-bottom: 25px; font-size: 1.2rem; }
         .footer-col ul li { margin-bottom: 12px; }
-        .footer-col ul li a { transition: 0.3s; }
-        .footer-col ul li a:hover { color: var(--primary-red); padding-left: 5px; }
-        
+        .footer-col ul li a:hover { color: var(--primary-red); }
         .footer-contact p { margin-bottom: 10px; display: flex; align-items: center; }
         .footer-contact i { margin-right: 10px; color: var(--primary-red); }
+        .copyright { text-align: center; border-top: 1px solid #222; padding-top: 25px; font-size: 0.85rem; }
 
-        .copyright { 
-            text-align: center; 
-            border-top: 1px solid #222; 
-            padding-top: 25px; 
-            font-size: 0.85rem; 
-        }
-
-        /* --- MOBILE RESPONSIVE --- */
+        /* Mobile */
         @media (max-width: 768px) {
-            .top-header { display: none; }
-            .nav-links { display: none; } 
-            .hero h1 { font-size: 2.8rem; }
-            .about-grid { grid-template-columns: 1fr; }
-            .focus-grid { grid-template-columns: repeat(2, 1fr); }
+            .top-header, .nav-links { display: none; }
+            .mv-grid { grid-template-columns: 1fr; }
+            .page-hero h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -312,133 +194,94 @@
                 <span class="logo-caption">Crafting the Core of Innovations</span>
             </div>
             <div class="nav-links">
-                <a href="index.html" class="active">Home</a>
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#contact">Contact</a>
+                <a href="index.html">Home</a>
+                <a href="about.html" class="active">About</a>
+                <a href="index.html#services">Services</a>
+                <a href="https://wafercore.com/contact-us">Contact</a>
             </div>
         </div>
     </nav>
 
-    <section class="hero">
-        <div class="container hero-content">
-            <h1>Innovate. Design. Succeed.</h1>
-            <p>Empowering innovation in Semiconductor and Embedded industry.</p>
-            <a href="#contact" class="btn">Get Started</a>
+    <header class="page-hero">
+        <div class="container">
+            <h1>About WaferCore</h1>
+            <p>Driving the future of semiconductor technology with passion and precision.</p>
+        </div>
+    </header>
+
+    <section class="mission-vision">
+        <div class="container mv-grid">
+            <div class="mv-content">
+                <div class="section-title" style="text-align: left; margin-bottom: 30px;">
+                    <h2>Who We Are</h2>
+                </div>
+                <p><strong>WaferCore</strong> is a forward-thinking technology company established in 2023. We are dedicated to delivering innovative solutions that span the entire hardware ecosystem, specializing in both cutting-edge VLSI design and robust embedded systems.</p>
+                
+                <h3>Our Mission</h3>
+                <p>To empower clients with exceptional services and expertise in high-growth areas like automotive, storage, processor, and sensor technology.</p>
+
+                <h3>Our Vision</h3>
+                <p>To remain your trusted partner in a rapidly evolving market, driven by a team of industry veterans and passionate innovators committed to excellence.</p>
+            </div>
+            <div class="img-wrapper">
+                <img src="images/electronics_board.jpg" alt="Advanced Electronics Circuit Board">
+            </div>
         </div>
     </section>
 
-    <div class="features">
+    <section class="features-section">
         <div class="container">
-            <div class="feature-grid">
-                <div class="feature-card">
+            <div class="section-title">
+                <h2>Features of WaferCore</h2>
+                <p>Why industry leaders choose us for their hardware needs.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-box">
                     <i class="fas fa-microchip"></i>
                     <h3>Precision Engineering</h3>
-                    <p>Delivering pixel-perfect VLSI designs and high-efficiency layouts with zero margin for error.</p>
+                    <p>We deliver pixel-perfect VLSI designs and layouts with zero margin for error, ensuring high yield and performance.</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-cogs"></i>
-                    <h3>End-to-End Systems</h3>
-                    <p>From concept to prototype, we handle the complete lifecycle of embedded hardware development.</p>
+                <div class="feature-box">
+                    <i class="fas fa-industry"></i>
+                    <h3>End-to-End Solutions</h3>
+                    <p>From architectural definition to post-silicon validation, we handle the complete lifecycle of product development.</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-layer-group"></i>
-                    <h3>Scalable Architecture</h3>
-                    <p>Future-proof semiconductor solutions designed to scale with next-gen technology demands.</p>
+                <div class="feature-box">
+                    <i class="fas fa-users-cog"></i>
+                    <h3>Expert Team</h3>
+                    <p>Our team comprises industry veterans with deep expertise in Automotive, AI, and Data Center technologies.</p>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <section id="about" class="about">
-        <div class="container about-grid">
-            <div class="about-text">
-                <div class="section-title" style="text-align: left; margin-bottom: 20px;">
-                    <h2>About WaferCore</h2>
-                </div>
-                <p><strong>WaferCore</strong> is a forward-thinking technology company, established in 2023, dedicated to delivering innovative solutions that span the entire hardware ecosystem. We specialize in both <strong>cutting-edge VLSI design</strong> for the semiconductor industry and <strong>robust embedded systems solutions</strong>.</p>
-                <p>With a strong focus on high-growth areas like automotive, storage, processor, and sensor technology, our mission is to empower clients with exceptional services and expertise.</p>
-                <a href="#" class="btn" style="margin-top: 10px;">Read More</a>
-            </div>
-            <div class="about-img">
-                <img src="https://wafercore.com/wp-content/uploads/2024/12/BackgroundVLSI-768x512.jpg" alt="WaferCore Technology">
             </div>
         </div>
     </section>
 
-    <section class="key-focus">
+    <section class="services-strip">
         <div class="container">
             <div class="section-title">
-                <h2>Our Key Focus</h2>
-                <p>Driving technological advancement across critical sectors.</p>
+                <h2>Services We Offer</h2>
+                <p>Comprehensive solutions for the modern hardware landscape.</p>
             </div>
-            <div class="focus-grid">
-                <div class="focus-item">
-                    <i class="fas fa-brain"></i>
-                    <h4>AI / ML</h4>
+            <div class="services-container">
+                <div class="service-item">
+                    <i class="fas fa-drafting-compass" style="font-size: 2rem; margin-bottom:15px; color:var(--primary-red);"></i>
+                    <h4>Chip Design Solutions</h4>
+                    <p>RTL Design, Synthesis, Physical Design, and Verification for complex SoCs.</p>
                 </div>
-                <div class="focus-item">
-                    <i class="fas fa-car-side"></i>
-                    <h4>Automotive</h4>
+                <div class="service-item">
+                    <i class="fas fa-robot" style="font-size: 2rem; margin-bottom:15px; color:var(--primary-red);"></i>
+                    <h4>Embedded Systems</h4>
+                    <p>Firmware development, PCB design, and product realization for commercial electronics.</p>
                 </div>
-                <div class="focus-item">
-                    <i class="fas fa-heartbeat"></i>
-                    <h4>Bio Medical</h4>
-                </div>
-                <div class="focus-item">
-                    <i class="fas fa-server"></i>
-                    <h4>Data Centers</h4>
-                </div>
-                <div class="focus-item">
-                    <i class="fas fa-desktop"></i>
-                    <h4>Displays</h4>
-                </div>
-                <div class="focus-item">
-                    <i class="fas fa-wifi"></i>
-                    <h4>IoT</h4>
-                </div>
-                <div class="focus-item">
-                    <i class="fas fa-network-wired"></i>
-                    <h4>Network</h4>
-                </div>
-                <div class="focus-item">
-                    <i class="fas fa-wave-square"></i>
-                    <h4>Sensors</h4>
+                <div class="service-item">
+                    <i class="fas fa-chalkboard-teacher" style="font-size: 2rem; margin-bottom:15px; color:var(--primary-red);"></i>
+                    <h4>Professional Training</h4>
+                    <p>Industry-focused courses in VLSI and Embedded systems to bridge the skill gap.</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="services" class="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Services</h2>
-                <p>Comprehensive hardware and software solutions.</p>
+            
+            <div style="margin-top: 60px;">
+                <a href="https://wafercore.com/contact-us" class="btn">Connect with WaferCore</a>
             </div>
-            <div class="service-grid">
-                <div class="service-card">
-                    <h3>Semiconductor Chip Design</h3>
-                    <p>Specializing in core semiconductor development, we offer end-to-end services, from high-level RTL design to rigorous Design Verification.</p>
-                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="service-card">
-                    <h3>Embedded Systems</h3>
-                    <p>We transform your concepts into commercial electronics, providing complete hardware and firmware engineering.</p>
-                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="service-card">
-                    <h3>Professional Training</h3>
-                    <p>Empower your workforce with our comprehensive catalog of industry-focused courses in VLSI and Embedded systems.</p>
-                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="cta-section">
-        <div class="container">
-            <h2>Connect with WaferCore: Your Partner in Semiconductor Innovation Awaits!</h2>
-            <a href="#" class="btn">Contact Us Today</a>
         </div>
     </section>
 
@@ -447,23 +290,15 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <h4>WaferCore</h4>
-                    <p>Crafting the Core of Innovations in VLSI and Embedded Systems.</p>
+                    <p>Crafting the Core of Innovations.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="#">Chip Design</a></li>
-                        <li><a href="#">Embedded Systems</a></li>
-                        <li><a href="#">Corporate Training</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="https://wafercore.com/contact-us">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-col footer-contact">
